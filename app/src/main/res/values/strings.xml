@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Quản lý thiết bị y tế</string>
+    <string name="store_name">THIẾT BỊ Y TẾ HOÀNG THỊNH</string>
+    <string name="store_logo_description">Logo cửa hàng thiết bị y tế</string>
+    <string name="product_count_label">Số lượng sản phẩm</string>
+    <string name="sample_product_count">86 sản phẩm</string>
+    <string name="total_value_label">Tổng giá trị hàng hóa</string>
+    <string name="sample_total_value">245.800.000 VNĐ</string>
+    <string name="featured_equipment_title">Thiết bị nổi bật</string>
+    <string name="blood_pressure_monitor">Máy đo áp</string>
+    <string name="wheelchair">Xe lăn</string>
+    <string name="thermometer">Nhiệt kế</string>
+    <string name="product_list_title">Gói sản phẩm</string>
+    <string name="product_list_subtitle">Thiết bị y tế đang có tại cửa hàng</string>
+    <string name="blood_pressure_detail">Gói máy đo huyết áp điện tử</string>
+    <string name="blood_pressure_price">450.000 VNĐ</string>
+    <string name="wheelchair_detail">Gói xe lăn hỗ trợ di chuyển</string>
+    <string name="wheelchair_price">1.850.000 VNĐ</string>
+    <string name="thermometer_detail">Gói nhiệt kế điện tử</string>
+    <string name="thermometer_price">180.000 VNĐ</string>
+    <string name="product_list">Danh sách sản phẩm</string>
+    <string name="add_product">Thêm sản phẩm</string>
+    <string name="add_product_title">THÊM SẢN PHẨM</string>
+    <string name="choose_import_date">Chưa chọn ngày nhập</string>
+    <string name="login">Đăng nhập</string>
+    <string name="exit">Thoát</string>
+    <string name="msg_product_list">Chức năng danh sách sẽ được bổ sung</string>
+    <string name="msg_add_product">Chức năng thêm sản phẩm sẽ được bổ sung</string>
+    <string name="msg_login">Chức năng đăng nhập sẽ được bổ sung</string>
+    <string-array name="product_categories">
+        <item>-- Chọn loại sản phẩm --</item>
+        <item>Thiết bị đo sức khỏe</item>
+        <item>Thiết bị hỗ trợ di chuyển</item>
+        <item>Chăm sóc sức khỏe</item>
+        <item>Vật tư y tế</item>
+    </string-array>
+</resources>

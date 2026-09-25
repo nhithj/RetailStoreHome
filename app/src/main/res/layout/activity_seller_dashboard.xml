@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/page_background">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="QUẢN LÝ CỬA HÀNG" android:textColor="@color/text_primary"
+            android:textSize="26sp" android:textStyle="bold" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" android:text="Tồn kho" android:textColor="@color/text_secondary" />
+        <TextView android:id="@+id/tvDashboardProducts" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textColor="@color/primary"
+            android:textSize="22sp" android:textStyle="bold" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="14dp" android:text="Đơn hàng" android:textColor="@color/text_secondary" />
+        <TextView android:id="@+id/tvDashboardOrders" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textColor="@color/primary"
+            android:textSize="22sp" android:textStyle="bold" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="14dp" android:text="Doanh thu đơn đã tạo" android:textColor="@color/text_secondary" />
+        <TextView android:id="@+id/tvDashboardRevenue" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textColor="@color/primary"
+            android:textSize="22sp" android:textStyle="bold" />
+        <Button android:id="@+id/btnDashboardAdd" style="@style/Widget.RetailStore.Button.Primary"
+            android:layout_marginTop="24dp" android:text="Thêm sản phẩm" />
+        <Button android:id="@+id/btnDashboardInventory" style="@style/Widget.RetailStore.Button.Outline"
+            android:text="Xem tồn kho / sản phẩm" />
+        <Button android:id="@+id/btnDashboardOrders" style="@style/Widget.RetailStore.Button.Outline"
+            android:text="Quản lý đơn hàng" />
+    </LinearLayout>
+</ScrollView>

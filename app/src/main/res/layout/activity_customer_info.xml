@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="24dp" android:background="@color/page_background">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Đăng ký nhận hàng" android:textSize="26sp" android:textStyle="bold" android:textColor="@color/text_primary"/>
+<EditText android:id="@+id/edtCustomerName" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:hint="Họ và tên" android:textColor="@color/text_primary" android:textColorHint="@color/text_secondary"/>
+<EditText android:id="@+id/edtCustomerPhone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:hint="Số điện thoại" android:inputType="phone" android:textColor="@color/text_primary" android:textColorHint="@color/text_secondary"/>
+<EditText android:id="@+id/edtCustomerAddress" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:hint="Địa chỉ nhận hàng" android:textColor="@color/text_primary" android:textColorHint="@color/text_secondary"/>
+<Button android:id="@+id/btnSaveCustomer" style="@style/Widget.RetailStore.Button.Primary" android:layout_marginTop="24dp" android:text="Lưu thông tin"/>
+</LinearLayout>

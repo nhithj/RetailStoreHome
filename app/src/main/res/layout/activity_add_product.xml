@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/addProductTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_product_title"
+            android:textColor="@color/text_primary"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Các mục có dấu * là bắt buộc"
+            android:textColor="@color/text_secondary" />
+
+        <EditText
+            android:id="@+id/edtCode"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/primary"
+            android:hint="Mã sản phẩm *"
+            android:inputType="text"
+            android:paddingStart="12dp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary" />
+
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/primary"
+            android:hint="Tên sản phẩm *"
+            android:inputType="textCapSentences"
+            android:paddingStart="12dp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary" />
+
+        <EditText
+            android:id="@+id/edtPrice"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/primary"
+            android:hint="Giá (VNĐ) *"
+            android:inputType="number"
+            android:paddingStart="12dp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary" />
+
+        <EditText
+            android:id="@+id/edtQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/primary"
+            android:hint="Số lượng *"
+            android:inputType="numberSigned"
+            android:paddingStart="12dp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Loại sản phẩm *"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerCategory"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:entries="@array/product_categories"
+            android:popupBackground="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Ngày nhập *"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/choose_import_date"
+                android:textColor="@color/text_secondary" />
+
+            <Button
+                android:id="@+id/btnChooseDate"
+                style="@style/Widget.RetailStore.Button.Outline"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginTop="0dp"
+                android:text="Chọn ngày" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Trạng thái"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbSelling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Đang bán" />
+
+            <RadioButton
+                android:id="@+id/rbStopped"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:text="Ngừng bán" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Hình ảnh sản phẩm"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgProduct"
+            android:layout_width="112dp"
+            android:layout_height="112dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_product_card"
+            android:contentDescription="Ảnh sản phẩm"
+            android:padding="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_store" />
+
+        <Button
+            android:id="@+id/btnChooseImage"
+            style="@style/Widget.RetailStore.Button.Outline"
+            android:layout_marginTop="8dp"
+            android:text="Chọn hình ảnh" />
+
+        <Button
+            android:id="@+id/btnSave"
+            style="@style/Widget.RetailStore.Button.Primary"
+            android:layout_marginTop="16dp"
+            android:text="Lưu sản phẩm" />
+    </LinearLayout>
+</ScrollView>
