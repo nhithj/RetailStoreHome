@@ -5,6 +5,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.content.SharedPreferences;
+import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
@@ -14,6 +15,7 @@ public class LoginActivity extends AppCompatActivity {
         EditText user = findViewById(R.id.edtUser);
         EditText password = findViewById(R.id.edtPassword);
         Button login = findViewById(R.id.btnLoginNow);
+        findViewById(R.id.btnOpenRegister).setOnClickListener(v -> startActivity(new Intent(this, RegisterActivity.class)));
         login.setOnClickListener(v -> {
             String username = user.getText().toString().trim();
             String pass = password.getText().toString();
@@ -22,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
                 data.edit().putBoolean("seller_logged_in", true).putBoolean("customer_logged_in", false).apply();
                 Toast.makeText(this, "Đăng nhập người bán thành công", Toast.LENGTH_SHORT).show();
                 finish();
-            } else if (username.equals("khachhang") && pass.equals("123")) {
+            } else if ((username.equals("khachhang") && pass.equals("123")) || isRegisteredAccount(username, pass)) {
                 SharedPreferences data = getSharedPreferences("store_data", MODE_PRIVATE);
                 data.edit().putBoolean("customer_logged_in", true).putBoolean("seller_logged_in", false).apply();
                 Toast.makeText(this, "Đăng nhập khách hàng thành công", Toast.LENGTH_SHORT).show();
@@ -31,5 +33,18 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(this, "Sai tài khoản hoặc mật khẩu. Dùng admin/123 hoặc khachhang/123", Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    private boolean isRegisteredAccount(String username, String password) {
+        SharedPreferences data = getSharedPreferences("store_data", MODE_PRIVATE);
+        return username.equalsIgnoreCase(data.getString("registered_username", ""))
+                && password.equals(data.getString("registered_password", ""));
+    }
+
+    @Override protected void onResume() {
+        super.onResume();
+        EditText user=findViewById(R.id.edtUser);
+        if(user.getText().toString().trim().isEmpty())
+            user.setText(getSharedPreferences("store_data",MODE_PRIVATE).getString("registered_username",""));
     }
 }

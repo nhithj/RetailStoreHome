@@ -33,6 +33,15 @@ public class ProductRepository {
         return p(c).getString(key(id, "name"), fallback);
     }
     public static String getCode(Context c, int id) { return p(c).getString(key(id, "code"), "YT" + String.format("%03d", id + 1)); }
+    public static String getNextCode(Context c) {
+        int nextId = BASE + p(c).getInt("custom_product_count", 0);
+        return "YT" + String.format("%03d", nextId + 1);
+    }
+    public static boolean isCodeUsed(Context c, String code, int exceptId) {
+        for (int id : getAllIds(c))
+            if (id != exceptId && getCode(c,id).equalsIgnoreCase(code.trim())) return true;
+        return false;
+    }
     public static long getPrice(Context c, int id) {
         long fallback = id < BASE ? DEFAULT_PRICES[id] : 0;
         return p(c).getLong(key(id, "price"), fallback);
@@ -48,6 +57,15 @@ public class ProductRepository {
     }
     public static String getStatus(Context c, int id) { return p(c).getString(key(id, "status"), "Đang bán"); }
     public static String getImageUri(Context c, int id) { return p(c).getString(key(id, "image"), ""); }
+    public static String getDate(Context c, int id) {
+        return p(c).getString(key(id, "date"), "01/09/2026 08:00:00");
+    }
+    public static boolean isAvailable(Context c, int id) {
+        return getQuantity(c,id) > 0 && "Đang bán".equals(getStatus(c,id));
+    }
+    public static String getAvailabilityText(Context c, int id) {
+        return isAvailable(c,id) ? "Còn hàng" : "Hết hàng";
+    }
     /** Mọi sản phẩm, kể cả sản phẩm admin mới thêm, đều có ảnh dự phòng. */
     public static int getImageRes(int id) {
         return id >= 0 && id < BASE ? IMAGES[id] : R.drawable.ic_store;

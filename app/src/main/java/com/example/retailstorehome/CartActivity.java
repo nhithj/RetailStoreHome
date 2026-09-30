@@ -49,7 +49,8 @@ public class CartActivity extends AppCompatActivity {
             row.setPadding(20, 20, 20, 20);
             row.setBackgroundResource(R.drawable.bg_product_card);
             ImageView image = new ImageView(this);
-            image.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            image.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            image.setBackgroundColor(getColor(R.color.white));
             ProductRepository.showImage(image, this, i);
             row.addView(image, new LinearLayout.LayoutParams(86, 86));
             TextView v = new TextView(this);
